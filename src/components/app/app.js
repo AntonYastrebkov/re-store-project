@@ -2,14 +2,15 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { HomePage, CartPage } from '../pages';
+import ShopHeader from '../shop-header';
 import Spinner from '../spinner';
 
 import './app.css';
 
 const App = () => {
   return (
-    <div>
-      <h1>Here will be books</h1>
+    <main role="main" className="container">
+      <ShopHeader numItems={5} total={142}/>
       <Switch>
         <Route
             path="/"
@@ -26,7 +27,7 @@ const App = () => {
             </div>
         )} />
       </Switch>
-    </div>
+    </main>
   );
 };
 
