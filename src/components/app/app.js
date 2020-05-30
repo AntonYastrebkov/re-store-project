@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+import { withBookStoreService } from '../hoc';
 import Spinner from '../spinner';
-import ErrorBoundry from '../error-boundry';
-import { BookStoreServiceProvider } from '../book-store-context';
-import BookStoreService from '../../services/book-store-service';
 
-export default class App extends Component {
+import './app.css';
 
-  state = {
-    bookService: new BookStoreService()
-  };
+const App = ({ bookStoreService }) => {
+  console.log(bookStoreService.getBooks());
+  return (
+    <div>
+      <h1>Here will be books</h1>
+      <Spinner />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <ErrorBoundry>
-        <BookStoreServiceProvider value={this.state.bookService}>
-          <h1>Here will be blood!</h1>
-          <Spinner />
-        </BookStoreServiceProvider>
-      </ErrorBoundry>
-    );
-  }
-}
+export default withBookStoreService()(App);

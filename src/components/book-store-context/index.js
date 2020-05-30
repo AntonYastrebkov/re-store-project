@@ -1,7 +1,7 @@
-import { 
+import {
   BookStoreServiceProvider,
   BookStoreServiceConsumer
-} from './book-service-context';
+} from './book-store-context';
 
 export {
   BookStoreServiceProvider,
