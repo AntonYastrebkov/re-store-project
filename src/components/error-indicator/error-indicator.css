@@ -8,6 +8,7 @@
   
 .error-indicator img {
   margin-bottom: 1rem;
+  max-width: 150px;
 }
   
 .error-indicator .boom {
